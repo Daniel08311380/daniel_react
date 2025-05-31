@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import About from './components/About';
+import Loading from './components/Loading';
+import Skills from './components/Skills';
+import Timeline from './components/Timeline';
+import Testimonials from './components/Testimonials';
+import Interests from './components/Interests';
+import Contact from './components/Contact';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Loading onLoadingComplete={handleLoadingComplete} />
+      <Header />
+      <main className="main-content">
+        <Hero isLoading={isLoading} />
+        <About />
+        <Skills />
+        <Timeline />
+        <Testimonials />
+        <Interests />
+        <Contact />
+      </main>
     </div>
   );
 }

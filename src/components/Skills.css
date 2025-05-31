@@ -1,0 +1,102 @@
+.skills-section {
+  padding: 80px 0;
+  background-color: #1a1a1a;
+  text-align: center;
+}
+
+.skills-section .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  background: linear-gradient(45deg, #00b4db, #0083b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skills-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.skill-item {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.skill-name {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.skill-bar {
+  background-color: #333;
+  border-radius: 5px;
+  height: 15px;
+  overflow: hidden;
+}
+
+.skill-level {
+  background: linear-gradient(45deg, #00b4db, #0083b0);
+  height: 100%;
+  width: 0; /* Initial state for animation */
+  transition: width 1s ease-in-out; /* Animation for the bar */
+}
+
+/* Animate the width of the skill bar when the section is visible */
+.skills-section.is-visible .skill-level {
+  /* The width is now controlled by the inline style in the component */
+  /* Remove the CSS variable as we are setting width directly in JS */
+  /* width: var(--skill-level-width); */
+}
+
+/* Optional: Add a slight delay for each skill item for a staggered effect */
+/*
+.skills-section.is-visible .skill-item:nth-child(1) .skill-level { transition-delay: 0.1s; }
+.skills-section.is-visible .skill-item:nth-child(2) .skill-level { transition-delay: 0.2s; }
+.skills-section.is-visible .skill-item:nth-child(3) .skill-level { transition-delay: 0.3s; }
+.skills-section.is-visible .skill-item:nth-child(4) .skill-level { transition-delay: 0.4s; }
+.skills-section.is-visible .skill-item:nth-child(5) .skill-level { transition-delay: 0.5s; }
+.skills-section.is-visible .skill-item:nth-child(6) .skill-level { transition-delay: 0.6s; }
+*/
+
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 50px 0;
+  }
+  .skills-section .section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  .skills-list {
+    padding: 0 10px;
+  }
+  .skill-item {
+    margin-bottom: 15px;
+  }
+  .skill-name {
+    font-size: 1rem;
+  }
+  .skill-bar {
+    height: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .skills-section {
+    padding: 30px 0;
+  }
+  .skills-section .section-title {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  .skills-list {
+    padding: 0 4px;
+  }
+  .skill-name {
+    font-size: 0.9rem;
+  }
+  .skill-bar {
+    height: 8px;
+  }
+} 

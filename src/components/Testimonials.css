@@ -1,0 +1,92 @@
+.testimonials-section {
+  padding: 80px 0;
+  /* Remove background color */
+  /* background-color: #1a1a1a; */
+  background-image: url('../assets/anime.jpg'); /* Add background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  text-align: center;
+  /* Ensure content is above the overlay */
+  z-index: 0;
+}
+
+.testimonials-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay with 60% transparency - adjust as needed */
+  z-index: 1; /* Place overlay above background image */
+}
+
+.testimonials-section .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  background: linear-gradient(45deg, #00b4db, #0083b0); /* Keep gradient for title */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* Ensure title is above the overlay */
+  position: relative;
+  z-index: 2;
+}
+
+.testimonials-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  /* Ensure container is above the overlay */
+  position: relative;
+  z-index: 2;
+}
+
+.testimonial-card {
+  background-color: rgba(37, 37, 37, 0.8); /* Slightly transparent card background */
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 400px;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Slightly stronger shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Ensure card content is readable on overlay */
+  color: #e0e0e0; /* Lighter text color */
+}
+
+.testimonial-quote {
+  font-size: 1.1rem;
+  color: #ccc; /* Keep quote color similar */
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.testimonial-author {
+  font-weight: bold;
+  color: #ffffff; /* Make author name white */
+  margin-top: 10px;
+}
+
+.testimonial-title {
+    font-size: 0.9rem;
+    color: #cccccc; /* Make title color lighter */
+}
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+  .testimonials-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial-card {
+    max-width: 90%;
+  }
+} 

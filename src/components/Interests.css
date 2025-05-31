@@ -1,0 +1,83 @@
+.interests-section {
+  padding: 80px 0;
+  background-color: #121212;
+  text-align: center;
+}
+
+.interests-section .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  background: linear-gradient(45deg, #00b4db, #0083b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Start slightly below final position */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Animation */
+}
+
+/* Animate title when the section is visible */
+.interests-section.is-visible .section-title {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.0s; /* Appear quickly or with a slight delay */
+}
+
+.interests-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px; /* Adjust gap as needed */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.interest-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(30px); /* Initial state for animation */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Animation */
+}
+
+/* Animate items when visible with a staggered delay */
+.interests-section.is-visible .interest-item {
+    opacity: 1;
+    transform: translateY(0);
+    /* Staggered delay added below */
+}
+
+.interests-section.is-visible .interest-item:nth-child(1) { transition-delay: 0.3s; } /* Adjust delay to appear after title */
+.interests-section.is-visible .interest-item:nth-child(2) { transition-delay: 0.4s; }
+.interests-section.is-visible .interest-item:nth-child(3) { transition-delay: 0.5s; }
+.interests-section.is-visible .interest-item:nth-child(4) { transition-delay: 0.6s; }
+.interests-section.is-visible .interest-item:nth-child(5) { transition-delay: 0.7s; }
+.interests-section.is-visible .interest-item:nth-child(6) { transition-delay: 0.8s; }
+/* Add more delays if you have more interest items */
+
+.interest-icon {
+  font-size: 3rem; /* Adjust size as needed */
+  margin-bottom: 10px;
+  color: #00b4db; /* Icon color */
+}
+
+.interest-name {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+}
+
+/* Add responsiveness */
+@media (max-width: 600px) {
+  .interests-container {
+    gap: 20px;
+  }
+
+  .interest-icon {
+    font-size: 2.5rem;
+  }
+
+  .interest-name {
+    font-size: 1rem;
+  }
+} 

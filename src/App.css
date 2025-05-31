@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
 .App-logo {
@@ -34,5 +37,40 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.main-content {
+  padding-top: 80px; /* Add padding to account for fixed header */
+  min-height: calc(100vh - 80px);
+  background-color: #121212;
+}
+
+html, body, #root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .about-image {
+    margin-top: 1.5rem; /* فاصله از بالا */
+    margin-bottom: 2rem; /* فاصله از پایین (قبلاً هست) */
+  }
+}
+@media (max-width: 480px) {
+  .about-image {
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .timeline-container {
+    margin: 0 auto;
+    /* اگر لازم بود: */
+    /* max-width: 400px; */
+  }
+  .timeline-item {
+    margin: 0 auto 2rem auto;
+    /* فاصله پایین برای جدا شدن آیتم‌ها */
   }
 }
